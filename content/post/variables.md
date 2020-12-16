@@ -8,7 +8,7 @@ tags = [
     "variables",
     "development",
 ]
-date = "2020-12-08"
+date = "2020-12-09"
 categories = [
     "Arduino",
     "Electronics",
