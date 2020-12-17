@@ -22,7 +22,7 @@ menu = "Reading From Potentiometer"
 ## Components Required
 -  Arduino Board
 - 10k ohm Potentiometer
-
+- Wires
 ## Procedure
 1. Connect one of the outer pins in the potentiometer to the ground.
 2. Connect the other outer pin to 5 volts
