@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Fading A Led &middot; </title>
+        <meta name="description" content="Basics of Arduino">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="generator" content="Hugo 0.135.0">
+        <meta name="robots" content="index,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta property="og:title" content="Fading A Led">
+<meta property="og:description" content="Basics of Arduino">
+<meta property="og:type" content="article">
+<meta property="og:url" content="//localhost:1313/fading-a-led/">
+        <link rel="stylesheet" href="//localhost:1313/dist/site.css">
+        <link rel="stylesheet" href="//localhost:1313/dist/syntax.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        
+        
+        
+        
+        
+
+    </head>
+    <body>
+        
+
+        <div id="wrapper">
+            <header class="site-header">
+                <div class="container">
+                    <div class="site-title-wrapper">
+                        
+                            <h1 class="site-title">
+                                <a href="//localhost:1313/">My blog</a>
+                            </h1>
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Twitter" aria-label="Twitter" href="https://twitter.com/XXX" rel="me" >
+                                <i class="fa fa-twitter" aria-hidden="true"></i>
+                            </a>
+                        
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Github" aria-label="Github" href="https://github.com/XXX" rel="me">
+                                <i class="fa fa-github-alt" aria-hidden="true"></i>
+                            </a>
+                        
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Email" aria-label="Send an Email" href="mailto:XXX@example.com">
+                                <i class="fa fa-envelope" aria-hidden="true"></i>
+                            </a>
+                        
+                    </div>
+
+                    <ul class="site-nav">
+                        
+
+                    </ul>
+                </div>
+            </header>
+
+            <div id="container">
+
+
+<div class="container">
+    <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
+        <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Fading A Led</h1>
+    
+        <p class="post-description" itemprop="description">Basics of Arduino</p>
+    
+    <p class="post-date post-line">
+        <span>Published <time datetime="2020-12-17" itemprop="datePublished">Thu, Dec 17, 2020</time></span>
+        <span>by</span>
+        <span itemscope="" itemprop="author" itemtype="https://schema.org/Person">
+            <span itemprop="name">
+                <a href="#" itemprop="url" rel="author">Denis Kiprono</a>
+            </span>
+        </span>
+    </p>
+    
+</header>
+
+        <div class="post-content clearfix" itemprop="articleBody">
+    
+
+    <p>This tutorial intends to demonstrate how to fade light on and off with arduino.
+To accomplish this, we shall use <code>analogWrite</code> function which uses pulse Width Modulation(PWM) to vary the light state.</p>
+<h2 id="components-required">Components Required</h2>
+<ul>
+<li>Arduino Board</li>
+<li>LED</li>
+<li>220 ohm Resistor</li>
+<li>Wires</li>
+<li>Breadboard</li>
+</ul>
+<h2 id="connection-preview">Connection Preview</h2>
+<p><img src="/simplefade.png" alt="Simple Fade"></p>
+<h2 id="procedure">Procedure</h2>
+<ul>
+<li>Connect the anode (the longer, positive leg) of your LED to digital output pin 9 on your board through a 220 ohm resistor</li>
+<li>Connect the cathode (the shorter, negative leg) directly to ground.</li>
+<li>Open the Editor(if you haven&rsquo;t)</li>
+<li>Before Setup function declare the following variables</li>
+</ul>
+<pre tabindex="0"><code>int led = 9;           // the PWM pin the LED is attached to
+int brightness = 0;    // how bright the LED is
+int fadeAmount = 5;    // how many points to fade the LED by
+</code></pre><ul>
+<li>In the setup function declare pin 9 to be an output</li>
+</ul>
+<pre tabindex="0"><code> pinMode(led, OUTPUT);
+</code></pre><ul>
+<li>in the loop function, set the brightness of pin 9</li>
+</ul>
+<pre tabindex="0"><code> analogWrite(led, brightness);
+</code></pre><ul>
+<li>Then change the brightness, using fadeAmount</li>
+</ul>
+<pre tabindex="0"><code>  brightness = brightness + fadeAmount;
+</code></pre><ul>
+<li>Reverse the direction of the fading at the <em>ends</em> of the fade</li>
+</ul>
+<pre tabindex="0"><code>  if (brightness &lt;= 0 || brightness &gt;= 255) {
+    fadeAmount = -fadeAmount;
+  }
+</code></pre><ul>
+<li>wait for 30 milliseconds to see the dimming effect</li>
+</ul>
+<pre tabindex="0"><code>delay(30);
+</code></pre><h2 id="full-source-code">Full Source Code</h2>
+<div class="highlight" linestart="1"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span></span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-ino" data-lang="ino"><span style="display:flex; background-color:#3c3d38"><span><span style="color:#66d9ef">int</span> led <span style="color:#f92672">=</span> <span style="color:#ae81ff">9</span>;           <span style="color:#75715e">// the PWM pin the LED is attached to
+</span></span></span><span style="display:flex; background-color:#3c3d38"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> brightness <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;    <span style="color:#75715e">// how bright the LED is
+</span></span></span><span style="display:flex; background-color:#3c3d38"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> fadeAmount <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>;    <span style="color:#75715e">// how many points to fade the LED by
+</span></span></span><span style="display:flex; background-color:#3c3d38"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex; background-color:#3c3d38"><span><span style="color:#75715e">// the setup routine runs once when you press reset:
+</span></span></span><span style="display:flex; background-color:#3c3d38"><span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setup</span>() {
+</span></span><span style="display:flex; background-color:#3c3d38"><span>  <span style="color:#75715e">// declare pin 9 to be an output:
+</span></span></span><span style="display:flex; background-color:#3c3d38"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">pinMode</span>(led, <span style="color:#66d9ef">OUTPUT</span>);
+</span></span><span style="display:flex; background-color:#3c3d38"><span>}
+</span></span><span style="display:flex; background-color:#3c3d38"><span>
+</span></span><span style="display:flex; background-color:#3c3d38"><span><span style="color:#75715e">// the loop routine runs over and over again forever:
+</span></span></span><span style="display:flex; background-color:#3c3d38"><span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">loop</span>() {
+</span></span><span style="display:flex; background-color:#3c3d38"><span>  <span style="color:#75715e">// set the brightness of pin 9:
+</span></span></span><span style="display:flex; background-color:#3c3d38"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">analogWrite</span>(led, brightness);
+</span></span><span style="display:flex; background-color:#3c3d38"><span>
+</span></span><span style="display:flex; background-color:#3c3d38"><span>  <span style="color:#75715e">// change the brightness for next time through the loop:
+</span></span></span><span style="display:flex; background-color:#3c3d38"><span><span style="color:#75715e"></span>  brightness <span style="color:#f92672">=</span> brightness <span style="color:#f92672">+</span> fadeAmount;
+</span></span><span style="display:flex; background-color:#3c3d38"><span>
+</span></span><span style="display:flex; background-color:#3c3d38"><span>  <span style="color:#75715e">// reverse the direction of the fading at the ends of the fade:
+</span></span></span><span style="display:flex; background-color:#3c3d38"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">if</span> (brightness <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">||</span> brightness <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">255</span>) {
+</span></span><span style="display:flex; background-color:#3c3d38"><span>    fadeAmount <span style="color:#f92672">=</span> <span style="color:#f92672">-</span>fadeAmount;
+</span></span><span style="display:flex; background-color:#3c3d38"><span>  }
+</span></span><span style="display:flex; background-color:#3c3d38"><span>  <span style="color:#75715e">// wait for 30 milliseconds to see the dimming effect
+</span></span></span><span style="display:flex; background-color:#3c3d38"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">delay</span>(<span style="color:#ae81ff">30</span>);
+</span></span><span style="display:flex; background-color:#3c3d38"><span>}
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+</div>
+
+        <footer class="post-footer clearfix">
+        <p class="post-tags">
+            <span>Tagged:</span>
+                <a href="/tags/arduino/">arduino</a>, 
+                <a href="/tags/basics/">basics</a>, 
+                <a href="/tags/led/">Led</a>, 
+                <a href="/tags/analogwrite/">analogWrite</a>
+        </p>
+    <div class="share">
+            <a class="icon-twitter" href="https://twitter.com/share?text=Fading%20A%20Led&url=%2f%2flocalhost%3a1313%2ffading-a-led%2f"
+                onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" aria-label="Share on Twitter">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+            </a>
+    </div>
+</footer>
+
+        
+    </article>
+</div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="site-title-wrapper">
+                    <h1 class="site-title">
+                        <a href="//localhost:1313/">My blog</a>
+                    </h1>
+                    <a class="button-square button-jump-top js-jump-top" href="#" aria-label="Back to Top">
+                        <i class="fa fa-angle-up" aria-hidden="true"></i>
+                    </a>
+                </div>
+
+                <p class="footer-copyright">
+                    <span>&copy; 2024 / Powered by <a href="https://gohugo.io/">Hugo</a></span>
+                </p>
+                <p class="footer-copyright">
+                    <span><a href="https://github.com/roryg/ghostwriter">Ghostwriter theme</a> By <a href="http://jollygoodthemes.com">JollyGoodThemes</a></span>
+                    <span>/ <a href="https://github.com/jbub/ghostwriter">Ported</a> to Hugo By <a href="https://github.com/jbub">jbub</a></span>
+                </p>
+            </div>
+        </footer>
+
+        <script src="//localhost:1313/js/jquery-1.11.3.min.js"></script>
+        <script src="//localhost:1313/js/jquery.fitvids.js"></script>
+        <script src="//localhost:1313/js/scripts.js"></script>
+    </body>
+</html>
+

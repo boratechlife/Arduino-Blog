@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>KY-023 JoyStick on My blog</title>
+    <link>//localhost:1313/tags/ky-023-joystick/</link>
+    <description>Recent content in KY-023 JoyStick on My blog</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 20 Dec 2020 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/ky-023-joystick/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Arduino KY-023 JoyStick</title>
+      <link>//localhost:1313/connecting-joystick-ky-023/</link>
+      <pubDate>Sun, 20 Dec 2020 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/connecting-joystick-ky-023/</guid>
+      <description>&lt;p&gt;An analog joystick has the followin two dimensions(x and y axis) and state that is set when joystick is pressed&lt;/p&gt;&#xA;&lt;h2 id=&#34;components-required&#34;&gt;Components Required&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Arduino uno&lt;/li&gt;&#xA;&lt;li&gt;Arduino Mega 2560(any board you have can work. This tutorial will used Arduino Mega 2560)&lt;/li&gt;&#xA;&lt;li&gt;KY-023 Joystick.&lt;/li&gt;&#xA;&lt;li&gt;2 jumper wired&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;pins&#34;&gt;pins&lt;/h2&gt;&#xA;&lt;p&gt;KY-023 has 5 pins&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;GND - Ground Pin&lt;/li&gt;&#xA;&lt;li&gt;+5V (5V pin)&lt;/li&gt;&#xA;&lt;li&gt;VRX(X-axis voltage)&lt;/li&gt;&#xA;&lt;li&gt;VRY(Y-axis voltage)&lt;/li&gt;&#xA;&lt;li&gt;SW (correponds to pressing down the middle joystick button)&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;procedure&#34;&gt;Procedure&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Set up your connection as shown in the followinf image.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;&lt;img src=&#34;//localhost:1313/scheme_ky023_arduino-300x200.jpg&#34; alt=&#34;joy stick connecting image&#34;&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

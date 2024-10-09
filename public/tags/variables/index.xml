@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Variables on My blog</title>
+    <link>//localhost:1313/tags/variables/</link>
+    <description>Recent content in Variables on My blog</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 09 Dec 2020 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/variables/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Arduino Variables</title>
+      <link>//localhost:1313/variables/</link>
+      <pubDate>Wed, 09 Dec 2020 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/variables/</guid>
+      <description>&lt;h1 id=&#34;constants&#34;&gt;Constants&lt;/h1&gt;&#xA;&lt;p&gt;These are expressions that are predefined in arduino language&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;false&lt;/strong&gt; - &lt;code&gt;false &lt;/code&gt; is used to define zero.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;true&lt;/strong&gt; -&lt;code&gt;true&lt;/code&gt; is used to define a non-zero value in programming, mostly 1 but -1 or 200 could also be &lt;code&gt;true&lt;/code&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;HIGH&lt;/strong&gt; - a pin is said to be High if:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;a voltage present at the pin is greater than 3.3v (5V boards)&lt;/li&gt;&#xA;&lt;li&gt;a voltage present at the pin is greater than 2.0v (3.3V boards)&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;LOW&lt;/strong&gt; -a pin is said to be &lt;code&gt;low&lt;/code&gt; if:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

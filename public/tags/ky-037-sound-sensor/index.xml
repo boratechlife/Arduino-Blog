@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ky-037 Sound Sensor on My blog</title>
+    <link>//localhost:1313/tags/ky-037-sound-sensor/</link>
+    <description>Recent content in Ky-037 Sound Sensor on My blog</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 21 Dec 2020 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/ky-037-sound-sensor/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ky-037 sound sensor with Arduino</title>
+      <link>//localhost:1313/ky-037-sound-sensor-with-arduino/</link>
+      <pubDate>Mon, 21 Dec 2020 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/ky-037-sound-sensor-with-arduino/</guid>
+      <description>&lt;p&gt;It consist of a capacitive microphone and an amplifier.The output of this module is both analog and digital.&lt;/p&gt;&#xA;&lt;h2 id=&#34;pins&#34;&gt;Pins&lt;/h2&gt;&#xA;&lt;p&gt;This module contains 4 pins, 2 of the are used to supply power.&#xA;pin 1: anaog ouput and pin 4: digital output-activates when sound reaches certain threshold.&lt;/p&gt;&#xA;&lt;h2 id=&#34;components-required&#34;&gt;Components Required&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Arduino uno&lt;/li&gt;&#xA;&lt;li&gt;KY-037 Sound sensor&lt;/li&gt;&#xA;&lt;li&gt;4 jumper wires&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;procedure&#34;&gt;Procedure&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Set up your connection as shown in the followinf image.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;&lt;img src=&#34;//localhost:1313/sound-sensor-image.jpg&#34; alt=&#34;joy stick connecting image&#34;&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

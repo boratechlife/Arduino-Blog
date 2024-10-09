@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>FL-3FF-SZ on My blog</title>
+    <link>//localhost:1313/tags/fl-3ff-sz/</link>
+    <description>Recent content in FL-3FF-SZ on My blog</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 09 Oct 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/fl-3ff-sz/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Connecting FL-3FF-SZ 12V Relay to Arduino</title>
+      <link>//localhost:1313/connecting-relay-module/</link>
+      <pubDate>Wed, 09 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/connecting-relay-module/</guid>
+      <description>&lt;h1 id=&#34;connecting-fl-3ff-sz-12v-relay-to-arduino&#34;&gt;Connecting FL-3FF-SZ 12V Relay to Arduino&lt;/h1&gt;&#xA;&lt;p&gt;The FL-3FF-SZ is a 12V relay module that can be easily interfaced with Arduino for controlling high-voltage devices. This guide will walk you through the process of connecting and using this relay with an Arduino board.&lt;/p&gt;&#xA;&lt;h2 id=&#34;components-needed&#34;&gt;Components Needed&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Arduino board (e.g., Arduino Uno)&lt;/li&gt;&#xA;&lt;li&gt;FL-3FF-SZ 12V Relay module&lt;/li&gt;&#xA;&lt;li&gt;Jumper wires&lt;/li&gt;&#xA;&lt;li&gt;Breadboard (optional)&lt;/li&gt;&#xA;&lt;li&gt;12V power supply for the relay (if not using Arduino&amp;rsquo;s 5V output)&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h2 id=&#34;relay-specifications&#34;&gt;Relay Specifications&lt;/h2&gt;&#xA;&lt;p&gt;The FL-3FF-SZ 12V relay has the following specifications:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

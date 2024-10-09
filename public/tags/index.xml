@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on My blog</title>
+    <link>//localhost:1313/tags/</link>
+    <description>Recent content in Tags on My blog</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 09 Oct 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Arduino</title>
+      <link>//localhost:1313/tags/arduino/</link>
+      <pubDate>Wed, 09 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/arduino/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Development</title>
+      <link>//localhost:1313/tags/development/</link>
+      <pubDate>Wed, 09 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/development/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Electronics</title>
+      <link>//localhost:1313/tags/electronics/</link>
+      <pubDate>Wed, 09 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/electronics/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>FL-3FF-SZ</title>
+      <link>//localhost:1313/tags/fl-3ff-sz/</link>
+      <pubDate>Wed, 09 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/fl-3ff-sz/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Relay</title>
+      <link>//localhost:1313/tags/relay/</link>
+      <pubDate>Wed, 09 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/relay/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Basics</title>
+      <link>//localhost:1313/tags/basics/</link>
+      <pubDate>Tue, 22 Dec 2020 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/basics/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>KY-033 Tracking</title>
+      <link>//localhost:1313/tags/ky-033-tracking/</link>
+      <pubDate>Tue, 22 Dec 2020 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/ky-033-tracking/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Ky-037 Sound Sensor</title>
+      <link>//localhost:1313/tags/ky-037-sound-sensor/</link>
+      <pubDate>Mon, 21 Dec 2020 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/ky-037-sound-sensor/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>KY-023 JoyStick</title>
+      <link>//localhost:1313/tags/ky-023-joystick/</link>
+      <pubDate>Sun, 20 Dec 2020 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/ky-023-joystick/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>AnalogWrite</title>
+      <link>//localhost:1313/tags/analogwrite/</link>
+      <pubDate>Thu, 17 Dec 2020 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/analogwrite/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Digital Signal</title>
+      <link>//localhost:1313/tags/digital-signal/</link>
+      <pubDate>Thu, 17 Dec 2020 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/digital-signal/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Led</title>
+      <link>//localhost:1313/tags/led/</link>
+      <pubDate>Thu, 17 Dec 2020 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/led/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Switch</title>
+      <link>//localhost:1313/tags/switch/</link>
+      <pubDate>Thu, 17 Dec 2020 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/switch/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Blinking Led</title>
+      <link>//localhost:1313/tags/blinking-led/</link>
+      <pubDate>Wed, 16 Dec 2020 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/blinking-led/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Operators</title>
+      <link>//localhost:1313/tags/operators/</link>
+      <pubDate>Wed, 16 Dec 2020 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/operators/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Control Structure</title>
+      <link>//localhost:1313/tags/control-structure/</link>
+      <pubDate>Sun, 13 Dec 2020 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/control-structure/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Syntax</title>
+      <link>//localhost:1313/tags/syntax/</link>
+      <pubDate>Sun, 13 Dec 2020 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/syntax/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Structure</title>
+      <link>//localhost:1313/tags/structure/</link>
+      <pubDate>Fri, 11 Dec 2020 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/structure/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Variables</title>
+      <link>//localhost:1313/tags/variables/</link>
+      <pubDate>Wed, 09 Dec 2020 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/variables/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Arduino KY-023 JoyStick &middot; </title>
+        <meta name="description" content="Basics of Arduino">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="generator" content="Hugo 0.135.0">
+        <meta name="robots" content="index,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta property="og:title" content="Arduino KY-023 JoyStick">
+<meta property="og:description" content="Basics of Arduino">
+<meta property="og:type" content="article">
+<meta property="og:url" content="//localhost:1313/connecting-joystick-ky-023/">
+        <link rel="stylesheet" href="//localhost:1313/dist/site.css">
+        <link rel="stylesheet" href="//localhost:1313/dist/syntax.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        
+        
+        
+        
+        
+
+    </head>
+    <body>
+        
+
+        <div id="wrapper">
+            <header class="site-header">
+                <div class="container">
+                    <div class="site-title-wrapper">
+                        
+                            <h1 class="site-title">
+                                <a href="//localhost:1313/">My blog</a>
+                            </h1>
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Twitter" aria-label="Twitter" href="https://twitter.com/XXX" rel="me" >
+                                <i class="fa fa-twitter" aria-hidden="true"></i>
+                            </a>
+                        
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Github" aria-label="Github" href="https://github.com/XXX" rel="me">
+                                <i class="fa fa-github-alt" aria-hidden="true"></i>
+                            </a>
+                        
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Email" aria-label="Send an Email" href="mailto:XXX@example.com">
+                                <i class="fa fa-envelope" aria-hidden="true"></i>
+                            </a>
+                        
+                    </div>
+
+                    <ul class="site-nav">
+                        
+
+                    </ul>
+                </div>
+            </header>
+
+            <div id="container">
+
+
+<div class="container">
+    <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
+        <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Arduino KY-023 JoyStick</h1>
+    
+        <p class="post-description" itemprop="description">Basics of Arduino</p>
+    
+    <p class="post-date post-line">
+        <span>Published <time datetime="2020-12-20" itemprop="datePublished">Sun, Dec 20, 2020</time></span>
+        <span>by</span>
+        <span itemscope="" itemprop="author" itemtype="https://schema.org/Person">
+            <span itemprop="name">
+                <a href="#" itemprop="url" rel="author">Denis Kiprono</a>
+            </span>
+        </span>
+    </p>
+    
+</header>
+
+        <div class="post-content clearfix" itemprop="articleBody">
+    
+
+    <p>An analog joystick has the followin two dimensions(x and y axis) and state that is set when joystick is pressed</p>
+<h2 id="components-required">Components Required</h2>
+<ul>
+<li>Arduino uno</li>
+<li>Arduino Mega 2560(any board you have can work. This tutorial will used Arduino Mega 2560)</li>
+<li>KY-023 Joystick.</li>
+<li>2 jumper wired</li>
+</ul>
+<h2 id="pins">pins</h2>
+<p>KY-023 has 5 pins</p>
+<ul>
+<li>GND - Ground Pin</li>
+<li>+5V (5V pin)</li>
+<li>VRX(X-axis voltage)</li>
+<li>VRY(Y-axis voltage)</li>
+<li>SW (correponds to pressing down the middle joystick button)</li>
+</ul>
+<h2 id="procedure">Procedure</h2>
+<ol>
+<li>Set up your connection as shown in the followinf image.</li>
+</ol>
+<p><img src="/scheme_ky023_arduino-300x200.jpg" alt="joy stick connecting image"></p>
+<ol start="2">
+<li>
+<p>Connect ground pin to ground</p>
+</li>
+<li>
+<p>Connect 5v pin to arduino 5v</p>
+</li>
+<li>
+<p>Connect VRX to &lsquo;A0&rsquo;</p>
+</li>
+<li>
+<p>Connect VRY to &ldquo;A1&rdquo;</p>
+</li>
+<li>
+<p>SW pin is connected to pin &lsquo;2&rsquo;</p>
+</li>
+</ol>
+<p>At the top</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-ino" data-lang="ino"><span style="display:flex; background-color:#3c3d38"><span><span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> inX <span style="color:#f92672">=</span> A0; <span style="color:#75715e">// analog input for x-axis
+</span></span></span><span style="display:flex; background-color:#3c3d38"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> inY <span style="color:#f92672">=</span> A1; <span style="color:#75715e">// analog input for y-axis
+</span></span></span><span style="display:flex; background-color:#3c3d38"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> inPressed <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>; <span style="color:#75715e">// input for detecting whether the joystick/button is pressed
+</span></span></span><span style="display:flex; background-color:#3c3d38"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex; background-color:#3c3d38"><span><span style="color:#66d9ef">int</span> xValue <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#75715e">// variable to store x value
+</span></span></span><span style="display:flex; background-color:#3c3d38"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> yValue <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#75715e">// variable to store y value
+</span></span></span><span style="display:flex; background-color:#3c3d38"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> notPressed <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#75715e">// variable to store the button&#39;s state =&gt; 1 if not pressed
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="6">
+<li>In the <code>setup()</code></li>
+</ol>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-ino" data-lang="ino"><span style="display:flex; background-color:#3c3d38"><span>  <span style="color:#a6e22e">pinMode</span>(inX, <span style="color:#66d9ef">INPUT</span>); <span style="color:#75715e">// setup x input
+</span></span></span><span style="display:flex; background-color:#3c3d38"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">pinMode</span>(inY, <span style="color:#66d9ef">INPUT</span>); <span style="color:#75715e">// setup y input
+</span></span></span><span style="display:flex; background-color:#3c3d38"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">pinMode</span>(inPressed, <span style="color:#66d9ef">INPUT_PULLUP</span>); <span style="color:#75715e">// we use a pullup-resistor for the button functionality
+</span></span></span><span style="display:flex; background-color:#3c3d38"><span><span style="color:#75715e"></span>  
+</span></span><span style="display:flex; background-color:#3c3d38"><span>  <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">begin</span>(<span style="color:#ae81ff">9600</span>); <span style="color:#75715e">// Setup serial connection for print out to console
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="7">
+<li>In the <code>loop()</code> function write:</li>
+</ol>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span></span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-ino" data-lang="ino"><span style="display:flex; background-color:#3c3d38"><span>  xValue <span style="color:#f92672">=</span> <span style="color:#a6e22e">analogRead</span>(inX); <span style="color:#75715e">// reading x value [range 0 -&gt; 1023]
+</span></span></span><span style="display:flex; background-color:#3c3d38"><span><span style="color:#75715e"></span>  yValue <span style="color:#f92672">=</span> <span style="color:#a6e22e">analogRead</span>(inY); <span style="color:#75715e">// reading y value [range 0 -&gt; 1023]
+</span></span></span><span style="display:flex; background-color:#3c3d38"><span><span style="color:#75715e"></span>  notPressed <span style="color:#f92672">=</span> <span style="color:#a6e22e">digitalRead</span>(inPressed); <span style="color:#75715e">// reading button state: 1 = not pressed, 0 = pressed
+</span></span></span><span style="display:flex; background-color:#3c3d38"><span><span style="color:#75715e"></span>  
+</span></span><span style="display:flex; background-color:#3c3d38"><span>  <span style="color:#75715e">// print out values
+</span></span></span><span style="display:flex; background-color:#3c3d38"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">print</span>(<span style="color:#e6db74">&#34;X: &#34;</span>);
+</span></span><span style="display:flex; background-color:#3c3d38"><span>  <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">println</span>(xValue);
+</span></span><span style="display:flex; background-color:#3c3d38"><span>  <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">print</span>(<span style="color:#e6db74">&#34;Y: &#34;</span>);
+</span></span><span style="display:flex; background-color:#3c3d38"><span>  <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">println</span>(yValue);
+</span></span><span style="display:flex; background-color:#3c3d38"><span>  <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">print</span>(<span style="color:#e6db74">&#34;Not pressed: &#34;</span>);
+</span></span><span style="display:flex; background-color:#3c3d38"><span>  <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">println</span>(notPressed);
+</span></span><span style="display:flex; background-color:#3c3d38"><span>  
+</span></span><span style="display:flex; background-color:#3c3d38"><span>  <span style="color:#75715e">// The following delay of 1000ms is only for debugging reasons (it&#39;s easier to follow the values on the serial monitor)
+</span></span></span><span style="display:flex; background-color:#3c3d38"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">delay</span>(<span style="color:#ae81ff">1000</span>); <span style="color:#75715e">// Probably not needed for most applications
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="full-source-code">Full source Code</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span></span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-ino" data-lang="ino"><span style="display:flex; background-color:#3c3d38"><span>
+</span></span><span style="display:flex; background-color:#3c3d38"><span><span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> inX <span style="color:#f92672">=</span> A0; <span style="color:#75715e">// analog input for x-axis
+</span></span></span><span style="display:flex; background-color:#3c3d38"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> inY <span style="color:#f92672">=</span> A1; <span style="color:#75715e">// analog input for y-axis
+</span></span></span><span style="display:flex; background-color:#3c3d38"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> inPressed <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>; <span style="color:#75715e">// input for detecting whether the joystick/button is pressed
+</span></span></span><span style="display:flex; background-color:#3c3d38"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex; background-color:#3c3d38"><span><span style="color:#66d9ef">int</span> xValue <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#75715e">// variable to store x value
+</span></span></span><span style="display:flex; background-color:#3c3d38"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> yValue <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#75715e">// variable to store y value
+</span></span></span><span style="display:flex; background-color:#3c3d38"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> notPressed <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#75715e">// variable to store the button&#39;s state =&gt; 1 if not pressed
+</span></span></span><span style="display:flex; background-color:#3c3d38"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex; background-color:#3c3d38"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setup</span>() {
+</span></span><span style="display:flex; background-color:#3c3d38"><span>  <span style="color:#a6e22e">pinMode</span>(inX, <span style="color:#66d9ef">INPUT</span>); <span style="color:#75715e">// setup x input
+</span></span></span><span style="display:flex; background-color:#3c3d38"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">pinMode</span>(inY, <span style="color:#66d9ef">INPUT</span>); <span style="color:#75715e">// setup y input
+</span></span></span><span style="display:flex; background-color:#3c3d38"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">pinMode</span>(inPressed, <span style="color:#66d9ef">INPUT_PULLUP</span>); <span style="color:#75715e">// we use a pullup-resistor for the button functionality
+</span></span></span><span style="display:flex; background-color:#3c3d38"><span><span style="color:#75715e"></span>  
+</span></span><span style="display:flex; background-color:#3c3d38"><span>  <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">begin</span>(<span style="color:#ae81ff">9600</span>); <span style="color:#75715e">// Setup serial connection for print out to console
+</span></span></span><span style="display:flex; background-color:#3c3d38"><span><span style="color:#75715e"></span>}
+</span></span><span style="display:flex; background-color:#3c3d38"><span>
+</span></span><span style="display:flex; background-color:#3c3d38"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">loop</span>() {
+</span></span><span style="display:flex; background-color:#3c3d38"><span>  xValue <span style="color:#f92672">=</span> <span style="color:#a6e22e">analogRead</span>(inX); <span style="color:#75715e">// reading x value [range 0 -&gt; 1023]
+</span></span></span><span style="display:flex; background-color:#3c3d38"><span><span style="color:#75715e"></span>  yValue <span style="color:#f92672">=</span> <span style="color:#a6e22e">analogRead</span>(inY); <span style="color:#75715e">// reading y value [range 0 -&gt; 1023]
+</span></span></span><span style="display:flex; background-color:#3c3d38"><span><span style="color:#75715e"></span>  notPressed <span style="color:#f92672">=</span> <span style="color:#a6e22e">digitalRead</span>(inPressed); <span style="color:#75715e">// reading button state: 1 = not pressed, 0 = pressed
+</span></span></span><span style="display:flex; background-color:#3c3d38"><span><span style="color:#75715e"></span>  
+</span></span><span style="display:flex; background-color:#3c3d38"><span>  <span style="color:#75715e">// print out values
+</span></span></span><span style="display:flex; background-color:#3c3d38"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">print</span>(<span style="color:#e6db74">&#34;X: &#34;</span>);
+</span></span><span style="display:flex; background-color:#3c3d38"><span>  <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">println</span>(xValue);
+</span></span><span style="display:flex; background-color:#3c3d38"><span>  <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">print</span>(<span style="color:#e6db74">&#34;Y: &#34;</span>);
+</span></span><span style="display:flex; background-color:#3c3d38"><span>  <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">println</span>(yValue);
+</span></span><span style="display:flex; background-color:#3c3d38"><span>  <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">print</span>(<span style="color:#e6db74">&#34;Not pressed: &#34;</span>);
+</span></span><span style="display:flex; background-color:#3c3d38"><span>  <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">println</span>(notPressed);
+</span></span><span style="display:flex; background-color:#3c3d38"><span>  
+</span></span><span style="display:flex; background-color:#3c3d38"><span>  <span style="color:#75715e">// The following delay of 1000ms is only for debugging reasons (it&#39;s easier to follow the values on the serial monitor)
+</span></span></span><span style="display:flex; background-color:#3c3d38"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">delay</span>(<span style="color:#ae81ff">1000</span>); <span style="color:#75715e">// Probably not needed for most applications
+</span></span></span><span style="display:flex; background-color:#3c3d38"><span><span style="color:#75715e"></span>}
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+</div>
+
+        <footer class="post-footer clearfix">
+        <p class="post-tags">
+            <span>Tagged:</span>
+                <a href="/tags/arduino/">arduino</a>, 
+                <a href="/tags/basics/">basics</a>, 
+                <a href="/tags/ky-023-joystick/">KY-023 JoyStick</a>
+        </p>
+    <div class="share">
+            <a class="icon-twitter" href="https://twitter.com/share?text=Arduino%20KY-023%20JoyStick&url=%2f%2flocalhost%3a1313%2fconnecting-joystick-ky-023%2f"
+                onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" aria-label="Share on Twitter">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+            </a>
+    </div>
+</footer>
+
+        
+    </article>
+</div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="site-title-wrapper">
+                    <h1 class="site-title">
+                        <a href="//localhost:1313/">My blog</a>
+                    </h1>
+                    <a class="button-square button-jump-top js-jump-top" href="#" aria-label="Back to Top">
+                        <i class="fa fa-angle-up" aria-hidden="true"></i>
+                    </a>
+                </div>
+
+                <p class="footer-copyright">
+                    <span>&copy; 2024 / Powered by <a href="https://gohugo.io/">Hugo</a></span>
+                </p>
+                <p class="footer-copyright">
+                    <span><a href="https://github.com/roryg/ghostwriter">Ghostwriter theme</a> By <a href="http://jollygoodthemes.com">JollyGoodThemes</a></span>
+                    <span>/ <a href="https://github.com/jbub/ghostwriter">Ported</a> to Hugo By <a href="https://github.com/jbub">jbub</a></span>
+                </p>
+            </div>
+        </footer>
+
+        <script src="//localhost:1313/js/jquery-1.11.3.min.js"></script>
+        <script src="//localhost:1313/js/jquery.fitvids.js"></script>
+        <script src="//localhost:1313/js/scripts.js"></script>
+    </body>
+</html>
+

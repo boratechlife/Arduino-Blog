@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Connecting FL-3FF-SZ 12V Relay to Arduino &middot; </title>
+        <meta name="description" content="Learn how to connect and use the FL-3FF-SZ 12V relay with Arduino">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="generator" content="Hugo 0.135.0">
+        <meta name="robots" content="index,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta property="og:title" content="Connecting FL-3FF-SZ 12V Relay to Arduino">
+<meta property="og:description" content="Learn how to connect and use the FL-3FF-SZ 12V relay with Arduino">
+<meta property="og:type" content="article">
+<meta property="og:url" content="//localhost:1313/connecting-relay-module/">
+        <link rel="stylesheet" href="//localhost:1313/dist/site.css">
+        <link rel="stylesheet" href="//localhost:1313/dist/syntax.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        
+        
+        
+        
+        
+
+    </head>
+    <body>
+        
+
+        <div id="wrapper">
+            <header class="site-header">
+                <div class="container">
+                    <div class="site-title-wrapper">
+                        
+                            <h1 class="site-title">
+                                <a href="//localhost:1313/">My blog</a>
+                            </h1>
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Twitter" aria-label="Twitter" href="https://twitter.com/XXX" rel="me" >
+                                <i class="fa fa-twitter" aria-hidden="true"></i>
+                            </a>
+                        
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Github" aria-label="Github" href="https://github.com/XXX" rel="me">
+                                <i class="fa fa-github-alt" aria-hidden="true"></i>
+                            </a>
+                        
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Email" aria-label="Send an Email" href="mailto:XXX@example.com">
+                                <i class="fa fa-envelope" aria-hidden="true"></i>
+                            </a>
+                        
+                    </div>
+
+                    <ul class="site-nav">
+                        
+
+                    </ul>
+                </div>
+            </header>
+
+            <div id="container">
+
+
+<div class="container">
+    <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
+        <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Connecting FL-3FF-SZ 12V Relay to Arduino</h1>
+    
+        <p class="post-description" itemprop="description">Learn how to connect and use the FL-3FF-SZ 12V relay with Arduino</p>
+    
+    <p class="post-date post-line">
+        <span>Published <time datetime="2024-10-09" itemprop="datePublished">Wed, Oct 9, 2024</time></span>
+        <span>by</span>
+        <span itemscope="" itemprop="author" itemtype="https://schema.org/Person">
+            <span itemprop="name">
+                <a href="#" itemprop="url" rel="author">Assistant</a>
+            </span>
+        </span>
+    </p>
+    
+</header>
+
+        <div class="post-content clearfix" itemprop="articleBody">
+    
+
+    <h1 id="connecting-fl-3ff-sz-12v-relay-to-arduino">Connecting FL-3FF-SZ 12V Relay to Arduino</h1>
+<p>The FL-3FF-SZ is a 12V relay module that can be easily interfaced with Arduino for controlling high-voltage devices. This guide will walk you through the process of connecting and using this relay with an Arduino board.</p>
+<h2 id="components-needed">Components Needed</h2>
+<ol>
+<li>Arduino board (e.g., Arduino Uno)</li>
+<li>FL-3FF-SZ 12V Relay module</li>
+<li>Jumper wires</li>
+<li>Breadboard (optional)</li>
+<li>12V power supply for the relay (if not using Arduino&rsquo;s 5V output)</li>
+</ol>
+<h2 id="relay-specifications">Relay Specifications</h2>
+<p>The FL-3FF-SZ 12V relay has the following specifications:</p>
+<ul>
+<li>Operating voltage: 12V DC</li>
+<li>Trigger voltage: 5V DC (compatible with Arduino&rsquo;s digital output)</li>
+<li>Contact rating: 10A 250VAC / 10A 30VDC</li>
+<li>Pins: VCC, GND, IN (Signal)</li>
+</ul>
+<h2 id="connecting-the-relay">Connecting the Relay</h2>
+<ol>
+<li>
+<p><strong>Power the relay:</strong></p>
+<ul>
+<li>Connect the VCC pin of the relay to the 5V pin on the Arduino</li>
+<li>Connect the GND pin of the relay to the GND pin on the Arduino</li>
+</ul>
+</li>
+<li>
+<p><strong>Control signal:</strong></p>
+<ul>
+<li>Connect the IN pin of the relay to a digital pin on the Arduino (e.g., pin 7)</li>
+</ul>
+</li>
+</ol>
+<h2 id="arduino-code">Arduino Code</h2>
+<p>Here&rsquo;s a simple Arduino sketch to demonstrate controlling the relay:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-arduino" data-lang="arduino"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> relayPin <span style="color:#f92672">=</span> <span style="color:#ae81ff">7</span>;  <span style="color:#75715e">// Digital pin connected to the relay&#39;s IN pin
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setup</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">pinMode</span>(relayPin, <span style="color:#66d9ef">OUTPUT</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">digitalWrite</span>(relayPin, <span style="color:#66d9ef">LOW</span>);  <span style="color:#75715e">// Ensure relay starts in OFF state
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">loop</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">digitalWrite</span>(relayPin, <span style="color:#66d9ef">HIGH</span>);  <span style="color:#75715e">// Turn relay ON
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">delay</span>(<span style="color:#ae81ff">2000</span>);                   <span style="color:#75715e">// Wait for 2 seconds
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">digitalWrite</span>(relayPin, <span style="color:#66d9ef">LOW</span>);   <span style="color:#75715e">// Turn relay OFF
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">delay</span>(<span style="color:#ae81ff">2000</span>);                   <span style="color:#75715e">// Wait for 2 seconds
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span></code></pre></div><h2 id="using-the-relay">Using the Relay</h2>
+<ol>
+<li>
+<p><strong>Connecting a load:</strong></p>
+<ul>
+<li>Connect your load (e.g., a lamp) to the COM (Common) and NO (Normally Open) terminals of the relay</li>
+<li>Ensure the load&rsquo;s power supply is appropriate for the relay&rsquo;s rating</li>
+</ul>
+</li>
+<li>
+<p><strong>Safety considerations:</strong></p>
+<ul>
+<li>Always disconnect the power source before making connections</li>
+<li>Use appropriate insulation and enclosures when working with high voltage</li>
+<li>Consult an electrician if you&rsquo;re unsure about high-voltage connections</li>
+</ul>
+</li>
+</ol>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<ul>
+<li>If the relay doesn&rsquo;t switch, check all connections and ensure the Arduino is properly powered</li>
+<li>Verify that the control signal from the Arduino is reaching the relay&rsquo;s IN pin</li>
+<li>Make sure the relay&rsquo;s power supply is adequate (5V from Arduino or external 12V source)</li>
+</ul>
+<p>Remember, safety first when working with relays and high-voltage circuits!</p>
+
+</div>
+
+        <footer class="post-footer clearfix">
+        <p class="post-tags">
+            <span>Tagged:</span>
+                <a href="/tags/arduino/">arduino</a>, 
+                <a href="/tags/relay/">relay</a>, 
+                <a href="/tags/electronics/">electronics</a>, 
+                <a href="/tags/fl-3ff-sz/">FL-3FF-SZ</a>, 
+                <a href="/tags/development/">development</a>
+        </p>
+    <div class="share">
+            <a class="icon-twitter" href="https://twitter.com/share?text=Connecting%20FL-3FF-SZ%2012V%20Relay%20to%20Arduino&url=%2f%2flocalhost%3a1313%2fconnecting-relay-module%2f"
+                onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" aria-label="Share on Twitter">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+            </a>
+    </div>
+</footer>
+
+        
+    </article>
+</div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="site-title-wrapper">
+                    <h1 class="site-title">
+                        <a href="//localhost:1313/">My blog</a>
+                    </h1>
+                    <a class="button-square button-jump-top js-jump-top" href="#" aria-label="Back to Top">
+                        <i class="fa fa-angle-up" aria-hidden="true"></i>
+                    </a>
+                </div>
+
+                <p class="footer-copyright">
+                    <span>&copy; 2024 / Powered by <a href="https://gohugo.io/">Hugo</a></span>
+                </p>
+                <p class="footer-copyright">
+                    <span><a href="https://github.com/roryg/ghostwriter">Ghostwriter theme</a> By <a href="http://jollygoodthemes.com">JollyGoodThemes</a></span>
+                    <span>/ <a href="https://github.com/jbub/ghostwriter">Ported</a> to Hugo By <a href="https://github.com/jbub">jbub</a></span>
+                </p>
+            </div>
+        </footer>
+
+        <script src="//localhost:1313/js/jquery-1.11.3.min.js"></script>
+        <script src="//localhost:1313/js/jquery.fitvids.js"></script>
+        <script src="//localhost:1313/js/scripts.js"></script>
+    </body>
+</html>
+

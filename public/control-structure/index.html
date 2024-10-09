@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Control Structures in Arduino &middot; </title>
+        <meta name="description" content="Basics of Arduino">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="generator" content="Hugo 0.135.0">
+        <meta name="robots" content="index,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta property="og:title" content="Control Structures in Arduino">
+<meta property="og:description" content="Basics of Arduino">
+<meta property="og:type" content="article">
+<meta property="og:url" content="//localhost:1313/control-structure/">
+        <link rel="stylesheet" href="//localhost:1313/dist/site.css">
+        <link rel="stylesheet" href="//localhost:1313/dist/syntax.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        
+        
+        
+        
+        
+
+    </head>
+    <body>
+        
+
+        <div id="wrapper">
+            <header class="site-header">
+                <div class="container">
+                    <div class="site-title-wrapper">
+                        
+                            <h1 class="site-title">
+                                <a href="//localhost:1313/">My blog</a>
+                            </h1>
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Twitter" aria-label="Twitter" href="https://twitter.com/XXX" rel="me" >
+                                <i class="fa fa-twitter" aria-hidden="true"></i>
+                            </a>
+                        
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Github" aria-label="Github" href="https://github.com/XXX" rel="me">
+                                <i class="fa fa-github-alt" aria-hidden="true"></i>
+                            </a>
+                        
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Email" aria-label="Send an Email" href="mailto:XXX@example.com">
+                                <i class="fa fa-envelope" aria-hidden="true"></i>
+                            </a>
+                        
+                    </div>
+
+                    <ul class="site-nav">
+                        
+
+                    </ul>
+                </div>
+            </header>
+
+            <div id="container">
+
+
+<div class="container">
+    <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
+        <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Control Structures in Arduino</h1>
+    
+        <p class="post-description" itemprop="description">Basics of Arduino</p>
+    
+    <p class="post-date post-line">
+        <span>Published <time datetime="2020-12-12" itemprop="datePublished">Sat, Dec 12, 2020</time></span>
+        <span>by</span>
+        <span itemscope="" itemprop="author" itemtype="https://schema.org/Person">
+            <span itemprop="name">
+                <a href="#" itemprop="url" rel="author">Denis Kiprono</a>
+            </span>
+        </span>
+    </p>
+    
+</header>
+
+        <div class="post-content clearfix" itemprop="articleBody">
+    
+
+    <h1 id="control-structure">Control Structure</h1>
+<h2 id="break"><code>break</code></h2>
+<p>it is used to exit from loop conditions or switch statement.</p>
+<h3 id="example">Example</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span></span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-Arduino" data-lang="Arduino"><span style="display:flex; background-color:#3c3d38"><span><span style="color:#66d9ef">int</span> threshold <span style="color:#f92672">=</span> <span style="color:#ae81ff">40</span>;
+</span></span><span style="display:flex; background-color:#3c3d38"><span><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> x <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; x <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">255</span>; x<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex; background-color:#3c3d38"><span>  <span style="color:#a6e22e">analogWrite</span>(PWMpin, x);
+</span></span><span style="display:flex; background-color:#3c3d38"><span>  sens <span style="color:#f92672">=</span> <span style="color:#a6e22e">analogRead</span>(sensorPin);
+</span></span><span style="display:flex; background-color:#3c3d38"><span>  <span style="color:#66d9ef">if</span> (sens <span style="color:#f92672">&gt;</span> threshold) {     <span style="color:#75715e">// bail out on sensor detect
+</span></span></span><span style="display:flex; background-color:#3c3d38"><span><span style="color:#75715e"></span>    x <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex; background-color:#3c3d38"><span>    <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex; background-color:#3c3d38"><span>  }
+</span></span><span style="display:flex; background-color:#3c3d38"><span>  <span style="color:#a6e22e">delay</span>(<span style="color:#ae81ff">50</span>);
+</span></span><span style="display:flex; background-color:#3c3d38"><span>}</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="continue">continue</h2>
+<p>It is simply used to skip an iteration based on certain condition. Skipping to next iteration</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span></span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-Arduino" data-lang="Arduino"><span style="display:flex; background-color:#3c3d38"><span><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> x <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; x <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">255</span>; x <span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex; background-color:#3c3d38"><span>  <span style="color:#66d9ef">if</span> (x <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">40</span> <span style="color:#f92672">&amp;&amp;</span> x <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">120</span>) {  <span style="color:#75715e">// create jump in values
+</span></span></span><span style="display:flex; background-color:#3c3d38"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">continue</span>;
+</span></span><span style="display:flex; background-color:#3c3d38"><span>  }
+</span></span><span style="display:flex; background-color:#3c3d38"><span>
+</span></span><span style="display:flex; background-color:#3c3d38"><span>  <span style="color:#a6e22e">analogWrite</span>(PWMpin, x);
+</span></span><span style="display:flex; background-color:#3c3d38"><span>  <span style="color:#a6e22e">delay</span>(<span style="color:#ae81ff">50</span>);
+</span></span><span style="display:flex; background-color:#3c3d38"><span>}</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="while-loop">while loop</h2>
+<p>it is a type of loop that will continuously execute until the condition inside the paranthesis is <code>false</code>.</p>
+<h3 id="example-1">Example</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-Arduino" data-lang="Arduino"><span style="display:flex; background-color:#3c3d38"><span>var <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex; background-color:#3c3d38"><span><span style="color:#66d9ef">while</span> (var <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">200</span>) {
+</span></span><span style="display:flex; background-color:#3c3d38"><span>  <span style="color:#75715e">// do something repetitive 200 times
+</span></span></span><span style="display:flex; background-color:#3c3d38"><span><span style="color:#75715e"></span>  var<span style="color:#f92672">++</span>;
+</span></span><span style="display:flex; background-color:#3c3d38"><span>}</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="dowhile-loop">do&hellip;while loop</h2>
+<p>It is equivalent to while the loop except that the condition is executed at the end of the loop. This means that the loop will be executed at least once.</p>
+<h3 id="example-2">Example</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-Arduino" data-lang="Arduino"><span style="display:flex; background-color:#3c3d38"><span><span style="color:#66d9ef">int</span> x <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex; background-color:#3c3d38"><span><span style="color:#66d9ef">do</span> {
+</span></span><span style="display:flex; background-color:#3c3d38"><span>  <span style="color:#a6e22e">delay</span>(<span style="color:#ae81ff">50</span>);          <span style="color:#75715e">// wait for sensors to stabilize
+</span></span></span><span style="display:flex; background-color:#3c3d38"><span><span style="color:#75715e"></span>  x <span style="color:#f92672">=</span> readSensors();  <span style="color:#75715e">// check the sensors
+</span></span></span><span style="display:flex; background-color:#3c3d38"><span><span style="color:#75715e"></span>} <span style="color:#66d9ef">while</span> (x <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">10</span>);</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="if"><code>if</code></h2>
+<p><code>If</code> the statement checks the condition and executes the code inside curly braces, if the condition is <code>true</code>.</p>
+<h2 id="else">&rsquo;else'</h2>
+<p><code>else </code> statement is executed whenever an if condition is false. It can be chained to form a bunch of <code>if..else</code> statements when there many conditions involved.</p>
+<h2 id="example-3">Example</h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+</span></span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-Arduino" data-lang="Arduino"><span style="display:flex; background-color:#3c3d38"><span><span style="color:#66d9ef">if</span> (temperature <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">70</span>) {
+</span></span><span style="display:flex; background-color:#3c3d38"><span>  <span style="color:#75715e">// Danger! Shut down the system.
+</span></span></span><span style="display:flex; background-color:#3c3d38"><span><span style="color:#75715e"></span>}
+</span></span><span style="display:flex; background-color:#3c3d38"><span><span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (temperature <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">60</span>) { <span style="color:#75715e">// 60 &lt;= temperature &lt; 70
+</span></span></span><span style="display:flex; background-color:#3c3d38"><span><span style="color:#75715e"></span>  <span style="color:#75715e">// Warning! User attention required.
+</span></span></span><span style="display:flex; background-color:#3c3d38"><span><span style="color:#75715e"></span>}
+</span></span><span style="display:flex; background-color:#3c3d38"><span><span style="color:#66d9ef">else</span> { <span style="color:#75715e">// temperature &lt; 60
+</span></span></span><span style="display:flex; background-color:#3c3d38"><span><span style="color:#75715e"></span>  <span style="color:#75715e">// Safe! Continue usual tasks.
+</span></span></span><span style="display:flex; background-color:#3c3d38"><span><span style="color:#75715e"></span>}</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="for-loop">for loop</h2>
+<p>The for statement is used to loop a sequence of code wrapped within curly braces.</p>
+<h3 id="example-4">Example</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span></span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-Arduino" data-lang="Arduino"><span style="display:flex; background-color:#3c3d38"><span><span style="color:#75715e">// Dim an LED using a PWM pin
+</span></span></span><span style="display:flex; background-color:#3c3d38"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> PWMpin <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>;  <span style="color:#75715e">// LED in series with 470 ohm resistor on pin 10
+</span></span></span><span style="display:flex; background-color:#3c3d38"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex; background-color:#3c3d38"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setup</span>() {
+</span></span><span style="display:flex; background-color:#3c3d38"><span>  <span style="color:#75715e">// no setup needed
+</span></span></span><span style="display:flex; background-color:#3c3d38"><span><span style="color:#75715e"></span>}
+</span></span><span style="display:flex; background-color:#3c3d38"><span>
+</span></span><span style="display:flex; background-color:#3c3d38"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">loop</span>() {
+</span></span><span style="display:flex; background-color:#3c3d38"><span>  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">255</span>; i<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex; background-color:#3c3d38"><span>    <span style="color:#a6e22e">analogWrite</span>(PWMpin, i);
+</span></span><span style="display:flex; background-color:#3c3d38"><span>    <span style="color:#a6e22e">delay</span>(<span style="color:#ae81ff">10</span>);
+</span></span><span style="display:flex; background-color:#3c3d38"><span>  }
+</span></span><span style="display:flex; background-color:#3c3d38"><span>}</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="goto"><code>goto</code></h2>
+<p>Transfers a program flow to a defined point of the program.</p>
+<h3 id="example-5">Example</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span></span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-Arduino" data-lang="Arduino"><span style="display:flex; background-color:#3c3d38"><span><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">byte</span> r <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; r <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">255</span>; r<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex; background-color:#3c3d38"><span>  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">byte</span> g <span style="color:#f92672">=</span> <span style="color:#ae81ff">255</span>; g <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>; g<span style="color:#f92672">--</span>) {
+</span></span><span style="display:flex; background-color:#3c3d38"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">byte</span> b <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; b <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">255</span>; b<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex; background-color:#3c3d38"><span>      <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">analogRead</span>(<span style="color:#ae81ff">0</span>) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">250</span>) {
+</span></span><span style="display:flex; background-color:#3c3d38"><span>        <span style="color:#66d9ef">goto</span> bailout;
+</span></span><span style="display:flex; background-color:#3c3d38"><span>      }
+</span></span><span style="display:flex; background-color:#3c3d38"><span>      <span style="color:#75715e">// more statements ...
+</span></span></span><span style="display:flex; background-color:#3c3d38"><span><span style="color:#75715e"></span>    }
+</span></span><span style="display:flex; background-color:#3c3d38"><span>  }
+</span></span><span style="display:flex; background-color:#3c3d38"><span>}
+</span></span><span style="display:flex; background-color:#3c3d38"><span>
+</span></span><span style="display:flex; background-color:#3c3d38"><span>bailout:
+</span></span><span style="display:flex; background-color:#3c3d38"><span><span style="color:#75715e">// more statements ...
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="return">return</h2>
+<p>End a function and if desired, return the value from the function</p>
+<h3 id="example-6">Example</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span></span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-Arduino" data-lang="Arduino"><span style="display:flex; background-color:#3c3d38"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">checkSensor</span>() {
+</span></span><span style="display:flex; background-color:#3c3d38"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">analogRead</span>(<span style="color:#ae81ff">0</span>) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">400</span>) {
+</span></span><span style="display:flex; background-color:#3c3d38"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex; background-color:#3c3d38"><span>  }
+</span></span><span style="display:flex; background-color:#3c3d38"><span>  <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex; background-color:#3c3d38"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex; background-color:#3c3d38"><span>  }
+</span></span><span style="display:flex; background-color:#3c3d38"><span>}</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="switch-case"><code>switch case</code></h2>
+<p>Switch case controls the flow of programs by allowing programmers to define a particular code that must be executed in various conditions.</p>
+<h3 id="example-7">Example</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span></span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-Arduino" data-lang="Arduino"><span style="display:flex; background-color:#3c3d38"><span><span style="color:#66d9ef">switch</span> (var) {
+</span></span><span style="display:flex; background-color:#3c3d38"><span>  <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex; background-color:#3c3d38"><span>    <span style="color:#75715e">//do something when var equals 1
+</span></span></span><span style="display:flex; background-color:#3c3d38"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex; background-color:#3c3d38"><span>  <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex; background-color:#3c3d38"><span>    <span style="color:#75715e">//do something when var equals 2
+</span></span></span><span style="display:flex; background-color:#3c3d38"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex; background-color:#3c3d38"><span>  <span style="color:#66d9ef">default</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex; background-color:#3c3d38"><span>    <span style="color:#75715e">// if nothing else matches, do the default
+</span></span></span><span style="display:flex; background-color:#3c3d38"><span><span style="color:#75715e"></span>    <span style="color:#75715e">// default is optional
+</span></span></span><span style="display:flex; background-color:#3c3d38"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex; background-color:#3c3d38"><span>}</span></span></code></pre></td></tr></table>
+</div>
+</div>
+
+</div>
+
+        <footer class="post-footer clearfix">
+        <p class="post-tags">
+            <span>Tagged:</span>
+                <a href="/tags/arduino/">arduino</a>, 
+                <a href="/tags/basics/">basics</a>, 
+                <a href="/tags/electronics/">electronics</a>, 
+                <a href="/tags/control-structure/">control structure</a>
+        </p>
+    <div class="share">
+            <a class="icon-twitter" href="https://twitter.com/share?text=Control%20Structures%20in%20Arduino&url=%2f%2flocalhost%3a1313%2fcontrol-structure%2f"
+                onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" aria-label="Share on Twitter">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+            </a>
+    </div>
+</footer>
+
+        
+    </article>
+</div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="site-title-wrapper">
+                    <h1 class="site-title">
+                        <a href="//localhost:1313/">My blog</a>
+                    </h1>
+                    <a class="button-square button-jump-top js-jump-top" href="#" aria-label="Back to Top">
+                        <i class="fa fa-angle-up" aria-hidden="true"></i>
+                    </a>
+                </div>
+
+                <p class="footer-copyright">
+                    <span>&copy; 2024 / Powered by <a href="https://gohugo.io/">Hugo</a></span>
+                </p>
+                <p class="footer-copyright">
+                    <span><a href="https://github.com/roryg/ghostwriter">Ghostwriter theme</a> By <a href="http://jollygoodthemes.com">JollyGoodThemes</a></span>
+                    <span>/ <a href="https://github.com/jbub/ghostwriter">Ported</a> to Hugo By <a href="https://github.com/jbub">jbub</a></span>
+                </p>
+            </div>
+        </footer>
+
+        <script src="//localhost:1313/js/jquery-1.11.3.min.js"></script>
+        <script src="//localhost:1313/js/jquery.fitvids.js"></script>
+        <script src="//localhost:1313/js/scripts.js"></script>
+    </body>
+</html>
+
